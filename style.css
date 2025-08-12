@@ -1,0 +1,83 @@
+body, html {
+            font-family: 'Press Start 2P', cursive;
+            background-color: #000000;
+            color: #FFFFFF;
+            scroll-behavior: smooth;
+        }
+
+        /* Custom pixelated border effect */
+        .pixel-border {
+            border: 4px solid #fff;
+            box-shadow: 0 0 0 4px #000;
+            image-rendering: pixelated;
+        }
+
+        .pixel-border-inset {
+             box-shadow: inset 0 0 0 4px #000, inset 0 0 0 8px #fff;
+        }
+
+        /* Blinking cursor effect for the header */
+        .blinking-cursor::after {
+            content: '_';
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        /* Navigation link styling */
+        .nav-link {
+            transition: all 0.2s ease-in-out;
+            text-shadow: 2px 2px #000;
+        }
+        .nav-link:hover {
+            color: #00ff00; /* Green glow on hover */
+            transform: scale(1.1);
+        }
+        
+        /* Section title styling */
+        .section-title {
+            text-shadow: 3px 3px #8A2BE2; /* BlueViolet shadow */
+        }
+
+        /* Button styling */
+        .pixel-button {
+            background-color: #8A2BE2;
+            border: 2px solid #fff;
+            padding: 10px 20px;
+            color: #fff;
+            text-shadow: 2px 2px #000;
+            transition: all 0.2s ease-in-out;
+            box-shadow: 4px 4px 0px #000;
+            cursor: pointer;
+        }
+        .pixel-button:hover {
+            background-color: #00ff00;
+            color: #000;
+            text-shadow: none;
+        }
+        .pixel-button:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px #000;
+        }
+        
+        /* Gemini Button Styling */
+        .gemini-button {
+            background-color: #1e90ff; /* DodgerBlue */
+        }
+        .gemini-button:hover {
+            background-color: #ff69b4; /* HotPink */
+        }
+
+        /* Modal styling */
+        .modal {
+            transition: opacity 0.25s ease;
+        }
+        .modal-content {
+            background-color: #1a1a1a;
+            max-width: 500px;
+            min-height: 200px;
+        }
