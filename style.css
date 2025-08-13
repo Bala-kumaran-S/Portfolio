@@ -34,7 +34,7 @@ body, html {
             text-shadow: 2px 2px #000;
         }
         .nav-link:hover {
-            color: #00ff00; /* Green glow on hover */
+            color: #00a700; /* Green glow on hover */
             transform: scale(1.1);
         }
         
@@ -53,11 +53,15 @@ body, html {
             transition: all 0.2s ease-in-out;
             box-shadow: 4px 4px 0px #000;
             cursor: pointer;
+            border-radius: 10px;
         }
         .pixel-button:hover {
-            background-color: #00ff00;
-            color: #000;
-            text-shadow: none;
+            background-color: #fff;
+            border: 2px solid #8A2BE2;
+            color: #8A2BE2;
+            text-shadow: 3px 2px #3b2937;
+            transform: translateY(-5px) scale(1.05); /* levitation effect */
+    box-shadow: 0 8px 20px rgba(201, 158, 241, 0.3);
         }
         .pixel-button:active {
             transform: translate(2px, 2px);
@@ -107,3 +111,48 @@ body, html {
             border: 4px solid rgba(172, 171, 171, 0.5);
             border-radius: 20px;
         }
+
+        .card-container {
+                perspective: 1000px;
+                width: 556px; /* adjust size */
+                height: 256px;
+                
+            }
+
+            .card {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                transform-style: preserve-3d;
+                animation: flip 6s infinite ease-in-out;
+                
+            }
+
+            .card-face {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                backface-visibility: hidden;
+            }
+
+            .card-front img,
+            .card-back img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 15px;
+                border: 3px solid grey;
+            }
+
+            .card-back {
+                transform: rotateY(180deg);
+            }
+
+            /* Animation with pauses */
+            @keyframes flip {
+                0%   { transform: rotateY(0deg); }
+                33.33% { transform: rotateY(0deg); }      /* hold image 1 for 2s */
+                50%  { transform: rotateY(180deg); }      /* flip in 1s */
+                83.33% { transform: rotateY(180deg); }    /* hold image 2 for 2s */
+                100% { transform: rotateY(360deg); }
+            }
