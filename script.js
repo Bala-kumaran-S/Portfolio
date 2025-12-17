@@ -1,14 +1,20 @@
 // --- Mobile Menu Toggle ---
-const mobileMenuButton = document.getElementById('mobile-menu-button');
-const mobileMenu = document.getElementById('mobile-menu');
-mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-const navLinks = document.querySelectorAll('#mobile-menu a, header a[href^="#"]');
-navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-        if (window.innerWidth < 768) { // md breakpoint
-            mobileMenu.classList.add('hidden');
-        }
-    });
+document.addEventListener("DOMContentLoaded", function () {
+    const menuButton = document.getElementById("mobile-menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    if (menuButton && mobileMenu) {
+        menuButton.addEventListener("click", function () {
+            mobileMenu.classList.toggle("hidden");
+        });
+
+        // Optional: Hide menu when a link is clicked (for better UX)
+        mobileMenu.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => {
+                mobileMenu.classList.add("hidden");
+            });
+        });
+    }
 });
 
 // Function to open the modal
